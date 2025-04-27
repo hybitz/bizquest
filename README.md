@@ -17,7 +17,7 @@ $ popd
 ## BizQuestの準備
 ### BizQuestのソースを取得
 ```
-$ git clone [https://github.com/ichylinux/bizquest.git または git@github.com:ichylinux/bizquest.git]
+$ git clone [https://github.com/hybitz/bizquest.git または git@github.com:hybitz/bizquest.git]
 $ cd bizquest
 ```
 ### ライブラリのインストール
