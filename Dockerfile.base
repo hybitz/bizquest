@@ -1,4 +1,5 @@
-FROM ichylinux/hybitz-centos:7.9.2009
+ARG registry
+FROM ${registry}/hybitz-almalinux:8.10-20250803-27
 
 RUN sudo yum -y install sqlite-devel
 
