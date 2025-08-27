@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bizquest
+  name: bizquest-app
   labels:
-    app: bizquest
+    app: bizquest-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: bizquest
+      app: bizquest-app
   template:
     metadata:
       labels:
-        app: bizquest
+        app: bizquest-app
     spec:
       restartPolicy: Always
       containers:
@@ -30,3 +30,4 @@ spec:
           value: 'true'
         - name: PORT
           value: '3000'
+        command: ['bundle', 'exec', 'rails', 's']
