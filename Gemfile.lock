@@ -101,7 +101,7 @@ GEM
     ffi-yajl (2.6.0)
       libyajl2 (>= 1.2)
     fuzzyurl (0.9.0)
-    globalid (1.2.1)
+    globalid (1.3.0)
       activesupport (>= 6.1)
     hashie (5.0.0)
     highline (3.1.2)
@@ -123,14 +123,14 @@ GEM
       itamae-plugin-resource-pip (~> 1.1)
     itamae-plugin-recipe-passenger (0.1.8)
       itamae (~> 1.10, >= 1.10.4)
-    itamae-plugin-recipe-selenium (0.5.1)
+    itamae-plugin-recipe-selenium (0.5.2)
       itamae (~> 1.10, >= 1.10.4)
     itamae-plugin-resource-pip (1.1.0)
       itamae (~> 1.2)
     jbuilder (2.13.0)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
-    json (2.13.2)
+    json (2.15.1)
     libyajl2 (2.1.0)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -144,10 +144,10 @@ GEM
       net-imap
       net-pop
       net-smtp
-    marcel (1.0.4)
+    marcel (1.1.0)
     method_source (1.1.0)
     mini_mime (1.1.5)
-    minitest (5.25.5)
+    minitest (5.26.0)
     mixlib-cli (2.1.8)
     mixlib-config (3.0.27)
       tomlrb
@@ -157,7 +157,7 @@ GEM
       chef-utils
     msgpack (1.8.0)
     multi_json (1.17.0)
-    net-imap (0.5.9)
+    net-imap (0.5.12)
       date
       net-protocol
     net-pop (0.1.2)
@@ -188,7 +188,7 @@ GEM
       wmi-lite (~> 1.0)
     plist (3.7.2)
     public_suffix (6.0.2)
-    puma (6.6.1)
+    puma (7.0.4)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (2.2.19)
@@ -323,4 +323,4 @@ RUBY VERSION
    ruby 3.2.9p265
 
 BUNDLED WITH
-   2.3.26
+   2.7.2

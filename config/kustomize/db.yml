@@ -1,0 +1,25 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: bizquest-db
+  labels:
+    app: bizquest-db
+spec:
+  template:
+    metadata:
+      labels:
+        app: bizquest-db
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: bizquest
+        image: bizquest/app:latest
+        envFrom:
+        - configMapRef:
+            name: bizquest-config
+        - secretRef:
+            name: bizquest-secret
+        env:
+        - name: RAILS_LOG_TO_STDOUT
+          value: 'true'
+        command: ['bundle', 'exec', 'rails', 'db:migrate']
