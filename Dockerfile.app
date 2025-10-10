@@ -5,4 +5,4 @@ EXPOSE 3000
 
 ADD  . ./
 RUN sudo chown -R ${USER}:${USER} ./ && \
-    NODE_OPTIONS='--openssl-legacy-provider' bundle exec rake assets:precompile RAIL_ENV=production
+    bundle exec rake assets:precompile RAIL_ENV=production
