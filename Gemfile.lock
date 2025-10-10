@@ -127,9 +127,6 @@ GEM
       itamae (~> 1.10, >= 1.10.4)
     itamae-plugin-resource-pip (1.1.0)
       itamae (~> 1.2)
-    jbuilder (2.13.0)
-      actionview (>= 5.0.0)
-      activesupport (>= 5.0.0)
     json (2.15.1)
     libyajl2 (2.1.0)
     listen (3.0.8)
@@ -147,6 +144,7 @@ GEM
     marcel (1.1.0)
     method_source (1.1.0)
     mini_mime (1.1.5)
+    mini_portile2 (2.8.9)
     minitest (5.26.0)
     mixlib-cli (2.1.8)
     mixlib-config (3.0.27)
@@ -171,7 +169,8 @@ GEM
     net-ssh (7.3.0)
     net-telnet (0.2.0)
     nio4r (2.7.4)
-    nokogiri (1.15.7-x86_64-linux)
+    nokogiri (1.18.10)
+      mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     ohai (19.0.3)
       chef-config (>= 14.12, < 20)
@@ -191,7 +190,7 @@ GEM
     puma (7.0.4)
       nio4r (~> 2.0)
     racc (1.8.1)
-    rack (2.2.19)
+    rack (2.2.20)
     rack-proxy (0.7.7)
       rack
     rack-test (2.2.0)
@@ -305,9 +304,8 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   byebug
   daddy
-  jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
-  nokogiri (< 1.16.0)
+  nokogiri
   puma
   rails (~> 6.1.0)
   sass-rails (~> 5.0)

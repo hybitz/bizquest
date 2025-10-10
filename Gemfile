@@ -9,8 +9,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'daddy'
 gem 'sqlite3', '~> 1.6.1'
 gem 'turbolinks', '~> 5'
-gem 'jbuilder', '~> 2.5'
-gem 'nokogiri', '< 1.16.0'
+gem 'nokogiri', force_ruby_platform: true
 gem 'puma'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
