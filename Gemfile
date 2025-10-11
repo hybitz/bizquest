@@ -10,8 +10,9 @@ gem 'daddy'
 gem 'jsbundling-rails'
 gem 'sqlite3', '~> 1.6.1'
 gem 'nokogiri', force_ruby_platform: true
+gem 'propshaft'
 gem 'puma'
-gem 'sass-rails', '~> 5.0'
+gem 'sass'
 
 group :development, :test do
   gem 'byebug'
