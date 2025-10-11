@@ -1,20 +1,20 @@
 import Phaser from 'phaser';
 
-import worldMap from 'maps/world.json';
-import innerMap from 'maps/inner.json';
-import townMap from 'maps/town.json';
+import worldMap from '../../maps/world.json';
+import innerMap from '../../maps/inner.json';
+import townMap from '../../maps/town.json';
 
-import worldImage from 'images/gfx/world.png';
-import innerImage from 'images/gfx/inner.png';
-import townImage from 'images/gfx/world.png';
+import worldImage from '../../images/gfx/world.png';
+import innerImage from '../../images/gfx/inner.png';
+import townImage from '../../images/gfx/world.png';
 
-import playerImage from 'images/gfx/character.png';
-import fontImage from 'images/gfx/font.png';
-import objectsImage from 'images/gfx/objects.png';
-import butterflyImage from 'images/butterfly.png';
+import playerImage from '../../images/gfx/character.png';
+import fontImage from '../../images/gfx/font.png';
+import objectsImage from '../../images/gfx/objects.png';
+import butterflyImage from '../../images/butterfly.png';
 
-import logoImage from 'images/logo.png';
-import wizardImage from 'images/enemies/wizard.png';
+import logoImage from '../../images/logo.png';
+import wizardImage from '../../images/enemies/wizard.png';
 
 export default class Boot extends Phaser.Scene {
 

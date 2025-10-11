@@ -1,7 +1,5 @@
-import "core-js/stable";
-import "regenerator-runtime/runtime";
 import Vue from 'vue'
-import App from '../app.vue'
+import App from './app.vue'
 
 document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({
