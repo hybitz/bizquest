@@ -4,7 +4,7 @@
   "dependencies": {
     "phaser": "3.55.2",
     "sass": "^1.93.2",
-    "vue": "^2.6.10",
+    "vue": "^3.0.0",
     "vue-loader": "^15.7.1",
     "vue-template-compiler": "^2.6.10",
     "webpack": "^5.102.1",
