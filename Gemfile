@@ -1,15 +1,15 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '~> 3.2.0'
+ruby '>= 3.2.0'
 
-gem 'rails', '~> 7.2.0'
+gem 'rails', '~> 8.0.0'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'cssbundling-rails'
-gem 'daddy'
+gem 'daddy', '~> 0.11.1'
 gem 'jsbundling-rails'
-gem 'sqlite3', '~> 1.6.1'
+gem 'sqlite3', '>= 2.1', force_ruby_platform: true
 gem 'nokogiri', force_ruby_platform: true
 gem 'propshaft'
 gem 'puma'
