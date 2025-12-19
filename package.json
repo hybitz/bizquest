@@ -5,8 +5,8 @@
     "phaser": "3.55.2",
     "sass": "^1.93.2",
     "vue": "^3.0.0",
-    "vue-loader": "^15.7.1",
-    "vue-template-compiler": "^2.6.10",
+    "vue-loader": "^16.8.3",
+    "@vue/compiler-sfc": "^3.0.0",
     "webpack": "^5.102.1",
     "webpack-cli": "^6.0.1"
   },
