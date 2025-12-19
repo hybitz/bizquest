@@ -1,5 +1,5 @@
 ARG registry
-FROM ${registry}/hybitz-almalinux:8.10-20250909-31
+FROM ${registry}/hybitz-almalinux:8.10-20250909-32
 
 RUN sudo yum -y install sqlite-devel
 
