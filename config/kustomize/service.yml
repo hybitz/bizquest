@@ -4,7 +4,7 @@ metadata:
   name: bizquest
 spec:
   selector:
-    app: bizquest
+    app: bizquest-app
   ports:
   - protocol: TCP
     port: 3000

@@ -1,20 +1,16 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: batch/v1
+kind: Job
 metadata:
-  name: bizquest
+  name: bizquest-db
   labels:
-    app: bizquest
+    app: bizquest-db
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: bizquest
   template:
     metadata:
       labels:
-        app: bizquest
+        app: bizquest-db
     spec:
-      restartPolicy: Always
+      restartPolicy: Never
       containers:
       - name: bizquest
         image: bizquest/app:latest
@@ -26,7 +22,4 @@ spec:
         env:
         - name: RAILS_LOG_TO_STDOUT
           value: 'true'
-        - name: RAILS_SERVE_STATIC_FILES
-          value: 'true'
-        - name: PORT
-          value: '3000'
+        command: ['bundle', 'exec', 'rails', 'db:migrate']
