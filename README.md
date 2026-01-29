@@ -32,7 +32,7 @@ $ yarn build
 ```
 ### データベースのセットアップ
 ```
-$ rails db:migrate
+$ rails db:reset
 ```
 # 遊び方
 ### 起動
