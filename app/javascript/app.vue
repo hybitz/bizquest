@@ -1,11 +1,12 @@
 <template>
-  <div style="display: none;"></div>
+  <div></div>
 </template>
 
 <script>
-import 'src/index';
-
 export default {
+  mounted() {
+    import('src/index');
+  },
   data: function () {
     return {
     }
