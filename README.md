@@ -1,5 +1,5 @@
 # 環境構築手順
-## CentOS 7 を用意
+## AlmaLinux 8 を用意
 ### sudo 権限を付与
 ```
 （ユーザで）$ su
@@ -8,7 +8,7 @@
 ```
 ### Ruby環境をインストール
 ```
-$ sudo yum install git
+$ sudo dnf install git
 $ git clone [https://github.com/ichylinux/daddy.git または git@github.com:ichylinux/daddy.git]
 $ pushd daddy
 $ bin/dad local
@@ -25,9 +25,18 @@ $ cd bizquest
 $ bundle install
 $ yarn install
 ```
+### アセットのビルド
+```
+$ yarn build:css
+$ yarn build
+```
+### データベースのセットアップ
+```
+$ rails db:migrate
+```
 # 遊び方
 ### 起動
 ```
-$ rails -s -b 0.0.0.0
+$ rails s -b 0.0.0.0
 ```
 ブラウザから http://localhost:3000 にアクセスします。
