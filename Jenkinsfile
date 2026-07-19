@@ -33,17 +33,10 @@ spec:
 """
         }
       }
-      environment {
-        COVERAGE = 'true'
-        DISABLE_SPRING = 'true'
-        FORMAT = 'junit'
-        RAILS_ENV = 'test'
-      }
       steps {
         container('app') {
           ansiColor('xterm') {
-            sh "bundle exec rails db:reset"
-            sh "bundle exec rails test"
+            sh "cargo test --release"
           }
         }
       }

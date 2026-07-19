@@ -6,13 +6,15 @@
 （ルートで）# sed -i -e 's/\(\/sbin:\/bin:\/usr\/sbin:\/usr\/bin\)$/&:\/usr\/local\/bin/' /etc/sudoers
 （ルートで）# echo "$USER ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/$USER
 ```
-### Ruby環境をインストール
+### Rust環境をインストール
 ```
-$ sudo dnf install git
-$ git clone [https://github.com/ichylinux/daddy.git または git@github.com:ichylinux/daddy.git]
-$ pushd daddy
-$ bin/dad local
-$ popd
+$ sudo dnf install git gcc
+$ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+### Node.js / Yarn をインストール
+```
+$ sudo dnf module install nodejs:20
+$ sudo npm install -g yarn
 ```
 ## BizQuestの準備
 ### BizQuestのソースを取得
@@ -22,7 +24,6 @@ $ cd bizquest
 ```
 ### ライブラリのインストール
 ```
-$ bundle install
 $ yarn install
 ```
 ### アセットのビルド
@@ -30,13 +31,9 @@ $ yarn install
 $ yarn build:css
 $ yarn build
 ```
-### データベースのセットアップ
-```
-$ rails db:reset
-```
 # 遊び方
 ### 起動
 ```
-$ rails s -b 0.0.0.0
+$ cargo run --release
 ```
 ブラウザから http://localhost:3000 にアクセスします。

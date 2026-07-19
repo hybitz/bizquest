@@ -18,16 +18,7 @@ spec:
       containers:
       - name: bizquest
         image: bizquest/app:latest
-        envFrom:
-        - configMapRef:
-            name: bizquest-config
-        - secretRef:
-            name: bizquest-secret
         env:
-        - name: RAILS_LOG_TO_STDOUT
-          value: 'true'
-        - name: RAILS_SERVE_STATIC_FILES
-          value: 'true'
         - name: PORT
           value: '3000'
-        command: ['bundle', 'exec', 'rails', 's']
+        command: ['bizquest']

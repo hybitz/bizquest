@@ -1,9 +1,5 @@
-.bundle
 .git
-db/*.sqlite3
-db/*.sqlite3-journal
-log
 node_modules
-public/packs
+target
 tmp
 Jenkinsfile*
