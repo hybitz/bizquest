@@ -1,5 +1,5 @@
 # 環境構築手順
-## AlmaLinux 8 を用意
+## AlmaLinux 9 を用意
 ### sudo 権限を付与
 ```
 （ユーザで）$ su
@@ -13,7 +13,7 @@ $ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 ### Node.js / Yarn をインストール
 ```
-$ sudo dnf module install nodejs:20
+$ sudo dnf module install nodejs:22
 $ sudo npm install -g yarn
 ```
 ## BizQuestの準備
