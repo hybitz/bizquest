@@ -1,24 +1,27 @@
 pipeline {
   agent none
+  options {
+    ansiColor('xterm')
+  }
   environment {
     APP_NAME = 'bizquest'
     KANIKO_OPTIONS = "--cache=${CACHE} --compressed-caching=false --build-arg registry=${ECR}"
+    MILESTONE = "v0.0.1"
   }
   stages {
     stage('build') {
       agent { kubernetes { inheritFrom 'kaniko' } }
       steps {
         container('kaniko') {
-          ansiColor('xterm') {
-            sh '/kaniko/executor -f `pwd`/Dockerfile.base -c `pwd` -d=${ECR}/${APP_NAME}/base:latest ${KANIKO_OPTIONS}'
-            sh '/kaniko/executor -f `pwd`/Dockerfile.test -c `pwd` -d=${ECR}/${APP_NAME}/test:latest ${KANIKO_OPTIONS}'
-          }
+          sh '/kaniko/executor -f `pwd`/Dockerfile.base -c `pwd` -d=${ECR}/${APP_NAME}/base:latest ${KANIKO_OPTIONS}'
+          sh '/kaniko/executor -f `pwd`/Dockerfile.test -c `pwd` -d=${ECR}/${APP_NAME}/test:latest ${KANIKO_OPTIONS}'
         }
       }
     }
     stage('unit') {
       agent {
         kubernetes {
+          inheritFrom 'default'
           yaml """
 apiVersion: v1
 kind: Pod
@@ -35,16 +38,14 @@ spec:
       }
       steps {
         container('app') {
-          ansiColor('xterm') {
-            sh "cargo test --release"
-          }
+          sh "cargo test --release"
         }
       }
     }
     stage('release') {
       agent { kubernetes { inheritFrom 'kaniko' } }
       environment {
-        RELEASE_TAG = "v0.0.1-${BUILD_NUMBER}"
+        RELEASE_TAG = "${MILESTONE}-${BUILD_NUMBER}"
       }
       stages {
         stage('tagging') {
@@ -61,9 +62,7 @@ spec:
         stage('artifact') {
           steps {
             container('kaniko') {
-              ansiColor('xterm') {
-                sh '/kaniko/executor -f `pwd`/Dockerfile.app -c `pwd` -d=${ECR}/${APP_NAME}/app:${RELEASE_TAG} ${KANIKO_OPTIONS}'
-              }
+              sh '/kaniko/executor -f `pwd`/Dockerfile.app -c `pwd` -d=${ECR}/${APP_NAME}/app:${RELEASE_TAG} ${KANIKO_OPTIONS}'
             }
           }
         }
