@@ -37,3 +37,13 @@ $ yarn build
 $ cargo run --release
 ```
 ブラウザから http://localhost:3000 にアクセスします。
+# 開発
+### ultraman をインストール
+```
+$ cargo install ultraman
+```
+### 開発サーバーの起動
+```
+$ ultraman start -f Procfile.dev
+```
+サーバーの起動に加えて、JS/CSS の変更を監視して自動で再ビルドします。
