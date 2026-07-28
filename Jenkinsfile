@@ -5,7 +5,7 @@ pipeline {
   }
   environment {
     APP_NAME = 'bizquest'
-    KANIKO_OPTIONS = "--cache=${CACHE} --compressed-caching=false --build-arg registry=${ECR}"
+    KANIKO_OPTIONS = "--cache=${CACHE} --cache-repo=${ECR}/${APP_NAME}/cache --compressed-caching=false --build-arg registry=${ECR}"
     MILESTONE = "v0.0.1"
   }
   stages {
