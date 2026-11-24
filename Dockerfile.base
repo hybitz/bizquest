@@ -1,4 +1,4 @@
-FROM rust:1.95-alpine
+FROM rust:1.100.0-alpine3.24@sha256:8d0e82abfdf9a38071e07cabc5afba4ddbe077631a80e4e742a760c38beadc33
 
 RUN apk add --no-cache musl-dev nodejs yarn
 
@@ -8,7 +8,7 @@ WORKDIR /app
 ADD Cargo.toml Cargo.lock ./
 RUN mkdir src && echo 'fn main() {}' > src/main.rs && \
     cargo build --release && \
-    rm -rf src target/release/bizquest target/release/deps/bizquest*
+    cargo clean --release -p bizquest && rm -rf src
 
 ADD package.json yarn.lock ./
 RUN yarn install && yarn cache clean
